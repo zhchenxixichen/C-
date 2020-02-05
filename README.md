@@ -153,25 +153,36 @@ int main()
 
             }
             
-         /*   if (score>0||score<59)
-            {G=0.0; }
-            if (score>60||score<69)
-            {G=1.0；}
-            if (score>70||score<79)
-            {G=2.0;}
-            if(score>80||score<89)
-            {G=3.0;}
-            if(score>90||score<99)
-            {G=4.0;}
+       
             
-            for(int i;i<index;i++)
+            
+            /*for(int i=0;i<index;i++)
             {
-               
-            }*/
-            
-            
-            
-            
+             cout<<arrStu[i].ID;
+             for(int j=0;j<arrStu[i].arrCourse.size();j++)
+             {
+             cout<<arrStu[i].arrCourse[j].Course<<endl;
+             cout<<arrStu[i].arrCourse[j].Credit<<endl;
+             }
+             
+             if (arrStu[i].arrCourse[j].Score>0||arrStu[i].arrCourse[j].Score<60)
+             {G=0.0;}
+              if (arrStu[i].arrCourse[j].Score>60||arrStu[i].arrCourse[j].Score<69)
+              {G=1.0;}
+               if (arrStu[i].arrCourse[j].Score>69||arrStu[i].arrCourse[j].Score<79)
+              {G=2.0;}
+              if (arrStu[i].arrCourse[j].Score>79||arrStu[i].arrCourse[j].Score<89)
+              {G=3.0;}
+               if (arrStu[i].arrCourse[j].Score>89||arrStu[i].arrCourse[j].Score<99)
+              {G=4.0;}
+              
+              GP=arrStu[i].arrCourse[j].Credit*G
+              PA= + arrStu[i].arrCourse[j].Credit
+              GPA= (+ GP)/PA
+              
+              */
+             
+             
         }
         
         
