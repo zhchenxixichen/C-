@@ -154,19 +154,19 @@ int main()
             }
             
          /*   if (score>0||score<59)
-            G=0.0; 
+            {G=0.0; }
             if (score>60||score<69)
             {G=1.0；}
             if (score>70||score<79)
-            G=2.0;
+            {G=2.0;}
             if(score>80||score<89)
-            G=3.0;
+            {G=3.0;}
             if(score>90||score<99)
-            G=4.0;
+            {G=4.0;}
             
             for(int i;i<index;i++)
             {
-               Courses.size
+               
             }*/
             
             
