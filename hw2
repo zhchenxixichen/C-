@@ -1,0 +1,199 @@
+/*
+
+Step 1:
+
+Compile and run. Answer the following questions.
+
+Question 1: Which parts of class Rectangle are data members? Are they public, private or protected?
+
+    serialNumber;
+     width;
+     height;
+    private
+
+Question 2: Which functions(s) of class Rectangle is/are constructors, setters, getters or destructor?
+
+constructors:
+    Rectangle(double, double);
+
+setters:
+    void setWidth(double);
+    void setHeight(double);
+    void setSerialNumber(int);
+
+getters:
+    double getWidth() const;
+    double getHeight() const;
+
+  destructor
+    ~Rectangle();
+
+
+
+
+Question 3: Delete the constructors and modify the code in main() to make the program work. Can a class have no constructor?
+    No.
+Question 3: Add the following two lines to a constructor which takes no parameter. Create 21 object without providing any width or height. Display the width and height of these objects to see they are.
+                width= 5.0;
+                height = 7.0;
+
+Step 2:
+
+Files in a project can be in many forms. Put all files in the main.cpp is a possibility.
+But when the project has more classes, this type of arrangement is the worst.
+Each class should be in a separated .h file or a pair of .h and .cpp files.
+
+Form 1 -- All code is in the main.cpp file.
+Form 2 -- Each class is in a separated .h file.
+Form 3 -- Each class is in a pair of separated .h and .cpp files.
+
+Now, move the Rectangle class to a separated .h file. Compile and run. The result
+should exactly the same with Form 1.
+
+Step 3:
+
+From 3 is the standard one in the industry. Use the following three files:
+
+     main.cpp
+     Rectangle.h
+     Rectangle.cpp
+
+for the project. Include all the three files in a project.
+
+*/
+
+////// Rectangle.h
+#include <iostream>
+#include <stdlib.h>
+#include <sstream>
+#include<iomanip>
+#include <time.h>
+
+using namespace std;
+
+class Rectangle
+{
+private:
+    int serialNumber;
+    double width;
+    double height;
+
+public:
+   Rectangle(double, double);
+    ~Rectangle();
+    void setWidth(double);
+    void setHeight(double);
+    void setSerialNumber(int);
+    double getWidth() const;
+    double getHeight() const;
+    int getSerialNumber() const;
+};
+////// Rectangle.cpp
+//#include "Rectangle.h"
+
+
+    Rectangle::Rectangle(double w, double h)
+    {
+        width= w;
+        height = h;
+    }
+
+    Rectangle::~Rectangle()
+    {
+
+    }
+    void Rectangle::setWidth(double w)
+    {
+        width = w;
+    }
+
+    void Rectangle::setHeight(double h)
+    {
+        height = h;
+    }
+    double Rectangle::getWidth() const
+    {
+        return width;
+    }
+
+     double Rectangle::getHeight() const
+    {
+        return height;
+    }
+
+    void Rectangle::setSerialNumber(int s)
+    {
+        serialNumber = s;
+    }
+    int Rectangle::getSerialNumber() const
+    {
+        return serialNumber;
+    }
+
+
+
+////// main.cpp
+/*#include <iostream>
+#include <stdlib.h>
+#include <sstream>
+
+using namespace std;*/
+//#include "Rectangle.h"
+
+const int SIZE = 21;
+
+void display(Rectangle *[]);
+
+int main()
+
+{
+    srand (time(NULL));
+
+  /* generate secret number between 1 and 10: */
+
+
+
+    Rectangle * arrRect[SIZE];
+    arrRect[SIZE]=NULL;
+
+
+    for (int i=0; i < SIZE; i++)
+    {
+         int i1 = rand() % 7 + 1;
+
+         int i2 = rand() % 7 + 1;
+
+         arrRect[i] = new Rectangle(i1, i2);
+         arrRect[i]->setSerialNumber(1000 + i);
+    }
+    display(arrRect);
+       
+        cout<<arrRect->Height<<endl;
+
+        if(arrRect->width=arrRect->Height)
+        {
+            cout<<"Suare"<<endl;
+            cout<<"-------------"<<endl;
+            cout<<"Label"<<setprecision(4)<<"Width"<<setprecision(4)<<"Height"<<endl;
+            cout<<R<<arrRect[i]->setSerialNumber(1000 + i)<<setprecision(4)<<i1<<setprecision(4)<<i2<<endl;
+
+        }
+
+        cout<<"Square"<<endl;
+
+
+    /// ADD YOUR CODE HERE TO DELETE ALL OBJECTS
+
+}
+
+void display(Rectangle * arr[])
+{
+
+    for (int i=0; i < SIZE; i++)
+    {
+
+            cout <<  arr[i]->getSerialNumber() << endl;
+           /// Display the serial number of the Rectangle object
+    }
+
+}
