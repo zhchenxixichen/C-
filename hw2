@@ -68,6 +68,7 @@ for the project. Include all the three files in a project.
 #include <sstream>
 #include<iomanip>
 #include <time.h>
+#include <string>
 
 using namespace std;
 
@@ -77,6 +78,10 @@ private:
     int serialNumber;
     double width;
     double height;
+    static int scount;
+     static int hcount;
+      static int vcount;
+
 
 public:
    Rectangle(double, double);
@@ -87,6 +92,11 @@ public:
     double getWidth() const;
     double getHeight() const;
     int getSerialNumber() const;
+    int getscount() const;
+    int gethcount() const;
+    int getvcount() const;
+
+
 };
 ////// Rectangle.cpp
 //#include "Rectangle.h"
@@ -130,6 +140,12 @@ public:
         return serialNumber;
     }
 
+??????     static int Rectangle::getscount() const
+       {
+            return scount;
+        }
+
+
 
 
 ////// main.cpp
@@ -163,23 +179,18 @@ int main()
 
          int i2 = rand() % 7 + 1;
 
-         arrRect[i] = new Rectangle(i1, i2);
+  ???????       arrRect[i] = new Rectangle(i1, i2);
          arrRect[i]->setSerialNumber(1000 + i);
+
+        string sn= "R"+to_string(1000+i);
+
+         cout<<sn<<endl;
     }
+
     display(arrRect);
-       
-        cout<<arrRect->Height<<endl;
 
-        if(arrRect->width=arrRect->Height)
-        {
-            cout<<"Suare"<<endl;
-            cout<<"-------------"<<endl;
-            cout<<"Label"<<setprecision(4)<<"Width"<<setprecision(4)<<"Height"<<endl;
-            cout<<R<<arrRect[i]->setSerialNumber(1000 + i)<<setprecision(4)<<i1<<setprecision(4)<<i2<<endl;
 
-        }
 
-        cout<<"Square"<<endl;
 
 
     /// ADD YOUR CODE HERE TO DELETE ALL OBJECTS
@@ -189,11 +200,51 @@ int main()
 void display(Rectangle * arr[])
 {
 
+
     for (int i=0; i < SIZE; i++)
     {
 
             cout <<  arr[i]->getSerialNumber() << endl;
            /// Display the serial number of the Rectangle object
-    }
+
+         if(arr[i]->getHeight()==arr[i]->getWidth())
+
+         {
+            cout<<"Suare"<<endl;
+         cout<<"-------------"<<endl;
+         cout<<"Label"<<"    "<<"Width"<<"    "<<"Height"<<endl;
+         cout<<arr[i]->getHeight()<<"    "<<arr[i]->getWidth()<<endl;
+         }
+
+
+         else if(arr[i]->getHeight()<arr[i]->getWidth())
+
+         {cout<<"Horizontal Rectangle"<<endl;
+         cout<<"-------------"<<endl;
+         cout<<"Label"<<"    "<<"Width"<<"    "<<"Height"<<endl;
+         cout<<arr[i]->getHeight()<<"    "<<arr[i]->getWidth()<<endl;
+         }
+
+         else{
+                cout<<"Vertical Rectangle"<<endl;
+         cout<<"-------------"<<endl;
+         cout<<"Label"<<"    "<<"Width"<<"    "<<"Height"<<endl;
+         cout<<arr[i]->getHeight()<<"    "<<arr[i]->getWidth()<<endl;
+         }
+
+
+
+
+
+
+
+
+     }
+
+
+
+
+
 
 }
+
